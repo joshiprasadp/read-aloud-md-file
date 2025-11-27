@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gemini Markdown Reader</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              gray: {
+                750: '#2d3748',
+                850: '#1a202c',
+                950: '#0d1117',
+              }
+            },
+            typography: (theme) => ({
+              DEFAULT: {
+                css: {
+                  maxWidth: 'none',
+                  color: theme('colors.gray.300'),
+                  a: {
+                    color: theme('colors.blue.400'),
+                    '&:hover': {
+                      color: theme('colors.blue.300'),
+                    },
+                  },
+                  h1: {
+                    color: theme('colors.gray.100'),
+                    borderBottom: `1px solid ${theme('colors.gray.700')}`,
+                    paddingBottom: '0.5rem',
+                  },
+                  h2: {
+                    color: theme('colors.gray.100'),
+                    borderBottom: `1px solid ${theme('colors.gray.700')}`,
+                    paddingBottom: '0.5rem',
+                    marginTop: '2em',
+                  },
+                  h3: {
+                    color: theme('colors.gray.100'),
+                  },
+                  strong: {
+                    color: theme('colors.gray.100'),
+                  },
+                  code: {
+                    color: theme('colors.gray.100'),
+                    backgroundColor: theme('colors.gray.800'),
+                    padding: '0.25rem',
+                    borderRadius: '0.25rem',
+                    fontWeight: '400',
+                  },
+                  'code::before': {
+                    content: '""',
+                  },
+                  'code::after': {
+                    content: '""',
+                  },
+                  pre: {
+                    backgroundColor: theme('colors.gray.850'),
+                    border: `1px solid ${theme('colors.gray.700')}`,
+                  },
+                  blockquote: {
+                    color: theme('colors.gray.400'),
+                    borderLeftColor: theme('colors.gray.600'),
+                  },
+                },
+              },
+            }),
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Custom scrollbar for better aesthetics */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1f2937; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #4b5563; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #6b7280; 
+      }
+      body {
+        background-color: #0d1117; /* Github Dark Dimmed-ish */
+        color: #c9d1d9;
+      }
+      /* Ensure text selection is visible */
+      ::selection {
+        background-color: #1f6feb;
+        color: #ffffff;
+      }
+      
+      /* Active TTS Highlight */
+      mark.tts-highlight {
+        background-color: #fbbf24; /* Amber-400 */
+        color: #000000;
+        border-radius: 2px;
+        padding: 0 2px;
+        box-shadow: 0 0 0 1px #f59e0b;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "remark-gfm": "https://aistudiocdn.com/remark-gfm@^4.0.1",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-950 text-gray-300 font-sans antialiased">
+    <div id="root"></div>
+  </body>
+</html>

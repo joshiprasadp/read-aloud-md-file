@@ -1,0 +1,5 @@
+{
+  "name": "Gemini Markdown Reader",
+  "description": "A robust Markdown viewer with text-to-speech capabilities, real-time word highlighting, and Gemini-powered document summarization.",
+  "requestFramePermissions": []
+}
